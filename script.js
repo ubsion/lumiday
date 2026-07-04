@@ -69,7 +69,7 @@ const translations = {
     appStore: "Download on App Store",
     comingSoon: "Coming soon",
     brandChinese: "Lumiday",
-    heroTitle: "Give every day<br>something to look forward to.",
+    heroTitle: "Give every day<br><span class=\"hero-highlight\">something to look forward to</span>.",
     heroSubtitle: "A beautifully designed countdown app for life’s important moments.",
     appTitle: "Lumiday",
     appTagline: "Let every important day glow",
