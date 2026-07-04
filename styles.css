@@ -310,6 +310,15 @@ h1 {
   letter-spacing: 0;
 }
 
+.hero-highlight {
+  color: #d9c1ff;
+  background: linear-gradient(100deg, #ffffff 0%, #d7b8ff 42%, #7edfff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 34px rgba(155, 92, 255, 0.46);
+}
+
 .hero-subtitle {
   max-width: 560px;
   margin-bottom: 34px;

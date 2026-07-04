@@ -9,7 +9,7 @@ const translations = {
     appStore: "App Store 下载",
     comingSoon: "即将上线",
     brandChinese: "闪光日子",
-    heroTitle: "让每一天，<br>都有值得期待的理由。",
+    heroTitle: "让每一天，<br>都有<span class=\"hero-highlight\">值得期待</span>的理由。",
     heroSubtitle: "一款专注于记录人生重要日子的高品质倒计时应用。",
     appTitle: "闪光日子",
     appTagline: "让每一个重要的日子发光",
