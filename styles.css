@@ -926,6 +926,70 @@ html[lang="en"] .policy-en {
   overflow-wrap: anywhere;
 }
 
+.contact-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-card::before {
+  content: "";
+  position: absolute;
+  width: 340px;
+  height: 220px;
+  right: -90px;
+  top: -80px;
+  border-radius: 999px;
+  background: radial-gradient(circle at center, rgba(155, 92, 255, 0.34), transparent 68%);
+  filter: blur(24px);
+  pointer-events: none;
+}
+
+.contact-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.contact-email {
+  color: #d4b7ff;
+  font-size: clamp(20px, 3vw, 28px);
+  font-weight: 900;
+  overflow-wrap: anywhere;
+}
+
+.contact-label {
+  margin: 28px 0 6px;
+  color: rgba(251, 249, 255, 0.58);
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.contact-actions {
+  margin-top: 30px;
+}
+
+.primary-contact-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 58px;
+  padding: 0 26px;
+  border: 1px solid rgba(167, 92, 255, 0.72);
+  border-radius: 18px;
+  color: var(--text);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.13), rgba(155, 92, 255, 0.2)),
+    rgba(9, 7, 18, 0.74);
+  box-shadow: 0 0 34px rgba(155, 92, 255, 0.24), inset 0 1px 0 rgba(255, 255, 255, 0.13);
+  font-weight: 900;
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.primary-contact-button:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.42);
+  background: rgba(255, 255, 255, 0.1);
+}
+
 .simple-list {
   display: grid;
   gap: 18px;

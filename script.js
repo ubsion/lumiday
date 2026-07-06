@@ -56,6 +56,28 @@ const translations = {
     privacyPolicy: "隐私政策",
     backHome: "返回首页",
     contact: "联系方式",
+    contactPageMetaTitle: "Lumiday 联系我们",
+    contactPageDescription: "联系 Lumiday 支持团队。",
+    contactEyebrow: "Lumiday / 闪光日子",
+    contactPageTitle: "联系我们",
+    contactIntro: "如果你在使用 Lumiday 时遇到问题，或想分享建议，欢迎通过邮件联系我们。",
+    contactEmailLabel: "联系邮箱",
+    contactNow: "立即联系",
+    supportPageMetaTitle: "Lumiday 支持",
+    supportPageDescription: "Lumiday 支持和联系信息。",
+    supportEyebrow: "Lumiday / 闪光日子",
+    supportPageTitle: "Lumiday 支持",
+    supportProductLabel: "产品名称：Lumiday / 闪光日子",
+    supportIntro: "如果你在使用 Lumiday 时遇到问题，或者想分享建议，欢迎通过邮件联系我们。",
+    supportFaqTitle: "常见问题",
+    supportFaqQ1: "支持离线使用吗？",
+    supportFaqA1: "支持。Lumiday 的核心功能可以离线使用。",
+    supportFaqQ2: "需要注册账号吗？",
+    supportFaqA2: "不需要。打开应用即可直接记录重要日子。",
+    supportFaqQ3: "数据会被上传吗？",
+    supportFaqA3: "不会。你的应用数据只保存在你的设备中。",
+    supportFaqQ4: "支持小组件吗？",
+    supportFaqA4: "支持。Lumiday 提供多种尺寸的小组件。",
     footerLine: "生活，会因为有所期待而更加美好。",
     rights: "保留所有权利。"
   },
@@ -116,6 +138,28 @@ const translations = {
     privacyPolicy: "Privacy Policy",
     backHome: "Back to Home",
     contact: "Contact",
+    contactPageMetaTitle: "Lumiday Contact",
+    contactPageDescription: "Contact Lumiday support.",
+    contactEyebrow: "Lumiday",
+    contactPageTitle: "Contact",
+    contactIntro: "If you run into any issues while using Lumiday, or would like to share feedback, feel free to contact us by email.",
+    contactEmailLabel: "Email",
+    contactNow: "Contact Now",
+    supportPageMetaTitle: "Lumiday Support",
+    supportPageDescription: "Lumiday support and contact information.",
+    supportEyebrow: "Lumiday",
+    supportPageTitle: "Lumiday Support",
+    supportProductLabel: "Product: Lumiday",
+    supportIntro: "If you run into any issues while using Lumiday, or would like to share feedback, feel free to contact us by email.",
+    supportFaqTitle: "FAQ",
+    supportFaqQ1: "Does Lumiday work offline?",
+    supportFaqA1: "Yes. Lumiday’s core features work offline.",
+    supportFaqQ2: "Do I need to create an account?",
+    supportFaqA2: "No. You can open the app and start recording important days right away.",
+    supportFaqQ3: "Will my data be uploaded?",
+    supportFaqA3: "No. Your app data stays only on your device.",
+    supportFaqQ4: "Does Lumiday support widgets?",
+    supportFaqA4: "Yes. Lumiday provides widgets in multiple sizes.",
     footerLine: "Life becomes brighter when there is something to look forward to.",
     rights: "All rights reserved."
   }
@@ -123,6 +167,21 @@ const translations = {
 
 const languageButtons = document.querySelectorAll("[data-lang]");
 const translatable = document.querySelectorAll("[data-i18n]");
+const translatableTitles = document.querySelectorAll("[data-i18n-title]");
+const translatableContent = document.querySelectorAll("[data-i18n-content]");
+const localeLinks = document.querySelectorAll("[data-locale-route]");
+
+function getUrlLanguage() {
+  const lang = new URLSearchParams(window.location.search).get("lang");
+  return lang === "en" || lang === "zh" ? lang : null;
+}
+
+function localizedHref(route, lang) {
+  if (route === "privacy") {
+    return `privacy.html?lang=${lang}`;
+  }
+  return null;
+}
 
 function setLanguage(lang) {
   const dictionary = translations[lang] || translations.zh;
@@ -131,6 +190,24 @@ function setLanguage(lang) {
     const key = element.dataset.i18n;
     if (dictionary[key]) {
       element.innerHTML = dictionary[key];
+    }
+  });
+  translatableTitles.forEach((element) => {
+    const key = element.dataset.i18nTitle;
+    if (dictionary[key]) {
+      element.textContent = dictionary[key];
+    }
+  });
+  translatableContent.forEach((element) => {
+    const key = element.dataset.i18nContent;
+    if (dictionary[key]) {
+      element.setAttribute("content", dictionary[key]);
+    }
+  });
+  localeLinks.forEach((link) => {
+    const href = localizedHref(link.dataset.localeRoute, lang);
+    if (href) {
+      link.setAttribute("href", href);
     }
   });
   languageButtons.forEach((button) => {
@@ -147,7 +224,8 @@ languageButtons.forEach((button) => {
 
 const savedLanguage = localStorage.getItem("lumiday-language");
 const defaultLanguage = document.body.dataset.defaultLanguage;
-setLanguage(defaultLanguage || (savedLanguage === "en" ? "en" : "zh"));
+const urlLanguage = getUrlLanguage();
+setLanguage(urlLanguage || (savedLanguage === "en" || savedLanguage === "zh" ? savedLanguage : defaultLanguage || "zh"));
 
 const revealElements = document.querySelectorAll(".reveal");
 const showInitialRevealElements = () => {
