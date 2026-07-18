@@ -19,7 +19,7 @@ Lumiday helps you keep meaningful days close: anniversaries, birthdays, travel p
 <table>
   <tr>
     <td align="center">
-      <img src="assets/lumiday-home-screen.jpg" alt="Lumiday Home Screen" width="260">
+      <img src="assets/iPhone-max-cn@1x.webp" alt="Lumiday Home Screen" width="260">
       <br>
       <sub>Home</sub>
     </td>

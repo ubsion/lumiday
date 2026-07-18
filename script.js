@@ -170,6 +170,7 @@ const translatable = document.querySelectorAll("[data-i18n]");
 const translatableTitles = document.querySelectorAll("[data-i18n-title]");
 const translatableContent = document.querySelectorAll("[data-i18n-content]");
 const localeLinks = document.querySelectorAll("[data-locale-route]");
+const heroPhoneImage = document.querySelector(".hero-phone-image");
 
 function getUrlLanguage() {
   const lang = new URLSearchParams(window.location.search).get("lang");
@@ -186,6 +187,9 @@ function localizedHref(route, lang) {
 function setLanguage(lang) {
   const dictionary = translations[lang] || translations.zh;
   document.documentElement.lang = lang === "zh" ? "zh-CN" : "en";
+  if (heroPhoneImage) {
+    heroPhoneImage.src = lang === "en" ? "assets/iPhone-max-en@1x.webp" : "assets/iPhone-max-cn@1x.webp";
+  }
   translatable.forEach((element) => {
     const key = element.dataset.i18n;
     if (dictionary[key]) {
