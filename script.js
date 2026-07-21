@@ -171,6 +171,9 @@ const translatableTitles = document.querySelectorAll("[data-i18n-title]");
 const translatableContent = document.querySelectorAll("[data-i18n-content]");
 const localeLinks = document.querySelectorAll("[data-locale-route]");
 const heroPhoneImage = document.querySelector(".hero-phone-image");
+const todayFeatureImage = document.querySelector(".today-shot");
+const widgetFeatureImage = document.querySelector(".widget-shot");
+const themeFeatureImage = document.querySelector(".theme-shot");
 
 function getUrlLanguage() {
   const lang = new URLSearchParams(window.location.search).get("lang");
@@ -189,6 +192,15 @@ function setLanguage(lang) {
   document.documentElement.lang = lang === "zh" ? "zh-CN" : "en";
   if (heroPhoneImage) {
     heroPhoneImage.src = lang === "en" ? "assets/iPhone-max-en@1x.webp" : "assets/iPhone-max-cn@1x.webp";
+  }
+  if (todayFeatureImage) {
+    todayFeatureImage.src = lang === "en" ? "assets/today-en@1x.webp" : "assets/today-card.webp";
+  }
+  if (widgetFeatureImage) {
+    widgetFeatureImage.src = lang === "en" ? "assets/samllwidget-en@1x.webp" : "assets/widget-card.webp";
+  }
+  if (themeFeatureImage) {
+    themeFeatureImage.src = lang === "en" ? "assets/card-en@1x.webp" : "assets/theme-card.webp";
   }
   translatable.forEach((element) => {
     const key = element.dataset.i18n;
