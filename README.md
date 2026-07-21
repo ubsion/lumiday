@@ -43,6 +43,33 @@ Lumiday helps you keep meaningful days close: anniversaries, birthdays, travel p
   </tr>
 </table>
 
+<table>
+  <tr>
+    <td align="center">
+      <img src="assets/iPhone-max-en@1x.webp" alt="Lumiday Home Screen" width="260">
+      <br>
+      <sub>Home</sub>
+    </td>
+    <td align="center">
+      <img src="assets/today-en@1x.webp" alt="Lumiday Today Highlight" width="260">
+      <br>
+      <sub>Today Highlight</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="assets/samllwidget-en@1x.webp" alt="Lumiday Widgets" width="260">
+      <br>
+      <sub>Widgets</sub>
+    </td>
+    <td align="center">
+      <img src="assets/card-en@1x.webp" alt="Lumiday Aurora Themes" width="260">
+      <br>
+      <sub>Aurora Themes</sub>
+    </td>
+  </tr>
+</table>
+
 ---
 
 ## Features
