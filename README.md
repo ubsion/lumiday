@@ -179,7 +179,7 @@ Feedback Email
 [feedback.glowdays@outlook.com](mailto:feedback.glowdays@outlook.com)
 
 App Store  
-Coming Soon
+[Download Lumiday on the App Store](https://apps.apple.com/app/lumiday/id6785448305)
 
 ---
 
